@@ -5,6 +5,7 @@ import DashboardPortfolio from "./Components/DashboardPortfolio";
 import SoftwareResume from "./Components/SoftwareResume";
 import HeroCabinet from "./Components/HeroCabinet";
 import EditBay from "./Components/EditBay";
+import CareerAtlas from "./Components/CareerAtlas";
 
 export default function Home() {
   const [terminalLogs, setTerminalLogs] = useState<string[]>([
@@ -117,6 +118,9 @@ export default function Home() {
             </span>
           </div>
           <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-mono">
+            <a href="#career" className="px-2.5 py-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all uppercase font-bold">Career</a>
+            <a href="#projects" className="px-2.5 py-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all uppercase font-bold">Projects</a>
+            <a href="#evaluation-lab" className="hidden md:inline-block px-2.5 py-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all uppercase font-bold">AI Lab</a>
             <a href="#library" className="px-2.5 py-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all uppercase font-bold">Games</a>
             <a href="#journey" className="px-2.5 py-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all uppercase font-bold">Journey</a>
             <a href="#engine" className="px-2.5 py-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all uppercase font-bold">Engine</a>
@@ -155,18 +159,18 @@ export default function Home() {
                   <span className="font-serif italic text-[#E5A93B]">Manga</span>
                 </h1>
                 <p className="text-[10px] sm:text-xs text-[#E5A93B] font-mono tracking-[0.2em] uppercase mt-4">
-                  2D Game Developer &middot; Systems Engineer
+                  Software Engineer &middot; Technical AI Evaluator &middot; Interactive Systems Developer
                 </p>
               </div>
 
               <div className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl font-light">
-                I make small mobile games with the <strong className="text-white font-medium">Solar2D</strong> engine and <strong className="text-white font-medium">Lua</strong>. Everything on this page is live and running in your browser, so go ahead and <strong className="text-white font-medium">tap a screen to play.</strong>
+                I build enterprise and healthcare software, evaluate AI-generated technical work, and develop interactive applications. My experience spans <strong className="text-white font-medium">TCS, Innovision, Handshake AI, Mercor, Appen CrowdGen, and Outlier</strong>, with hands-on projects from embedded systems through cloud and browser-based engineering.
               </div>
 
               {/* Action Buttons styled like reference site */}
               <div className="flex flex-wrap gap-4 mt-2">
                 <a 
-                  href="#library" 
+                  href="#projects" 
                   className="px-6 py-3 bg-[#E5A93B] hover:bg-[#ffc266] text-[#050507] font-black uppercase text-xs tracking-wider rounded transition-all font-mono shadow-[0_4px_15px_rgba(229,169,59,0.15)]"
                 >
                   View My Work
@@ -190,7 +194,7 @@ export default function Home() {
                   ✉ Email Direct
                 </a>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/M16616678" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3.5 py-2 font-bold uppercase rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all"
@@ -280,6 +284,8 @@ export default function Home() {
 
         </header>
 
+        <CareerAtlas />
+
         {/* Playable Star Catcher Arcade Centerpiece */}
         <section className="flex flex-col gap-4">
           <div className="flex flex-col gap-1 border-l-2 border-[#FFB23E] pl-3">
@@ -310,12 +316,12 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white tracking-tight">Developer Profile</h3>
-                  <p className="text-xs text-[#FFB23E] font-mono tracking-wider mt-1 uppercase">2D Game Developer · Solar2D Specialist</p>
+                  <p className="text-xs text-[#FFB23E] font-mono tracking-wider mt-1 uppercase">Software Engineering · AI Evaluation · Interactive Systems</p>
                 </div>
               </div>
 
               <p className="text-sm text-slate-300 leading-relaxed mb-8">
-                I started learning Solar2D back in <b>2024</b> and haven't really stopped since. Most of what I make is small stuff: arcade shooters, match puzzles, endless runners, a couple of physics toys. The thing I keep chasing is <b>good game feel</b>, controls that respond right away and still hit 60fps on a cheap phone. Lua makes prototyping quick, and Solar2D's physics, composer and widget libraries are what actually get things finished.
+                My engineering journey began with an Arduino-based bachelor\'s project, expanded into enterprise financial systems at TCS and graduate study at the University of Cincinnati, and now includes healthcare software at Innovision, technical AI evaluation, and interactive game development.
               </p>
             </div>
 
@@ -392,7 +398,7 @@ export default function Home() {
                 <span>🌗</span> Beyond games, the day job
               </h4>
               <p className="text-slate-400 text-xs leading-relaxed">
-                I also come from a software background: an <b>MS in Information Technology from the University of Cincinnati (2024 to 2025, 3.97 GPA)</b>, plus time as a software engineer at TCS, a full-stack intern at Innovision LLC, and an AI evaluator. That work taught me how to keep code organized, which honestly helps a lot with the games. But games are where I'd rather be.
+                I also come from a software background: an <b>MS in Information Technology from the University of Cincinnati (2024 to 2025, 3.97 GPA)</b>, plus time as a software engineer at TCS, a full-stack intern at Innovision LLC, and an AI evaluator. That work taught me how to keep code organized, which honestly helps a lot with the games. I now connect software engineering, testing, and AI quality evaluation across those disciplines.
               </p>
             </div>
           </div>
@@ -527,10 +533,10 @@ export default function Home() {
               ★ INSERT COIN ★
             </span>
             <h2 className="text-2xl sm:text-4xl font-sans font-black text-white uppercase mb-3 relative">
-              Let's build a game.
+              Let\'s build reliable software.
             </h2>
             <p className="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto mb-8 relative">
-              Have a 2D game idea, a prototype that needs polishing, or a Solar2D role to fill? Drop me a line, I read everything.
+              Open to software engineering, AI evaluation, quality engineering, healthcare technology and interactive development opportunities.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center relative z-10 text-xs sm:text-sm font-mono">
@@ -555,7 +561,7 @@ export default function Home() {
                 in · LinkedIn
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/M16616678" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="px-5 py-3.5 bg-[#050507] border border-white/10 text-slate-300 hover:text-white rounded-xl font-bold uppercase hover:border-[#E5A93B] transition-all"
@@ -572,8 +578,8 @@ export default function Home() {
             Hand-built with Next.js & HTML5 Canvas. Adi Narayana Manga, 2024 to 2026.
           </div>
           <div className="flex gap-4 font-semibold uppercase tracking-wider font-mono">
-            <span>Engine: Solar2D (Lua)</span>
-            <span>Deployments: iOS / Android / WebGL</span>
+            <span>Engineering · AI Evaluation · Interactive Systems</span>
+            <span>Next.js · TypeScript · Java · Python</span>
           </div>
         </footer>
 
