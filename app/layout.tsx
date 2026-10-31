@@ -19,8 +19,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adi Narayana Manga | 2D Game Developer & Solar2D Specialist",
-  description: "Playable 2D game builds, Lua scripts, and software engineering portfolio of Adi Narayana Manga.",
+  title: "Adi Narayana Manga | Software Engineer & Technical AI Evaluator",
+  description: "Software engineering, AI evaluation, healthcare technology, academic projects and interactive game development by Adi Narayana Manga.",
 };
 
 export default function RootLayout({

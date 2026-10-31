@@ -14,7 +14,7 @@ export default function SoftwareResume() {
       bullets: [
         "Developing high-performance user interfaces and responsive layouts using React, Next.js, and Tailwind CSS.",
         "Building scalable REST APIs with Python and FastAPI, integrating data-driven features and AI evaluations.",
-        "Automating end-to-end user-scenario audits using browser automation tools like Playwright, reducing regression verification times by 30%."
+        "Using browser automation and testing approaches for end-to-end user-scenario checks."
       ],
       tag: "Full-Stack"
     },
@@ -31,14 +31,26 @@ export default function SoftwareResume() {
       tag: "AI & Alignment"
     },
     {
+      role: "Technical AI Evaluator (Contract)",
+      company: "Handshake AI · Mercor · Appen CrowdGen · Outlier",
+      location: "Remote",
+      period: "Contract assignments · dates vary",
+      bullets: [
+        "Evaluating AI-generated technical content and responses for quality, accuracy, and task adherence.",
+        "Applying assignment-specific review criteria and providing evidence-based technical feedback.",
+        "Client tasks and proprietary rating guidelines are not disclosed in this public portfolio."
+      ],
+      tag: "AI Quality"
+    },
+    {
       role: "Software Engineer",
       company: "Tata Consultancy Services (TCS)",
       location: "Hyderabad, India",
       period: "Nov 2020 - Aug 2024",
       bullets: [
-        "Designed and maintained core enterprise Java/Spring Boot microservices, serving over 10M+ operations daily.",
-        "Collaborated in Agile sprints to coordinate code reviews, debug production bottlenecks, and maintain 99.9% service uptime.",
-        "Refactored legacy database queries and structured indexing, reducing query load latency profiles by 25%."
+        "Worked on CFMS 2.0 financial application modules, including Payee, Treasury, and E-billing, using Java and Spring technologies.",
+        "Built and maintained APIs, batch workflows, reports, and database-backed financial processing features.",
+        "Used JasperReports, JMeter, Jenkins, and Docker in reporting, testing, and deployment workflows."
       ],
       tag: "Backend & Systems"
     }
@@ -168,11 +180,17 @@ export default function SoftwareResume() {
                   M.S. in Information Technology
                 </h4>
                 <p className="text-sm font-bold text-slate-300 mt-1">University of Cincinnati</p>
-                <p className="text-xs text-slate-500 mt-1">Aug 2024 - Dec 2025 | Cumulative GPA: <strong className="text-white">3.97 / 4.0</strong></p>
+                <p className="text-xs text-slate-500 mt-1">University of Cincinnati · Master's study (graduation date and GPA to be reconciled against official records)</p>
                 
-                <p className="text-xs text-slate-400 italic mt-6 border-l-2 border-indigo-500 pl-3 leading-relaxed">
-                  "This degree laid the academic foundation for algorithm complexity analysis, database architecture, and software design principles. Applying these structures makes my game physics loops highly optimal."
+                <p className="text-xs text-slate-400 mt-6 border-l-2 border-indigo-500 pl-3 leading-relaxed">
+                  Coursework and projects span artificial intelligence, human-computer interaction, web architecture and information technology research. See the career atlas for individual case studies.
                 </p>
+                <div className="mt-5 border-t border-white/10 pt-5">
+                  <span className="text-[10px] font-black uppercase text-indigo-400 tracking-wider">Bachelor's Degree</span>
+                  <h4 className="mt-2 text-base font-black text-white">Electrical &amp; Electronics Engineering</h4>
+                  <p className="text-sm text-slate-300">Vignan University · 2020</p>
+                  <p className="mt-2 text-xs text-slate-400">Final-year project: Advanced Home Automation Control System using Arduino, Bluetooth, and Python.</p>
+                </div>
               </div>
             </div>
 
