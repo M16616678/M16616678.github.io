@@ -1,0 +1,30 @@
+name: Portfolio Quality Gate
+on:
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - name: Install reproducible dependencies
+        run: npm ci
+      - name: Static type check
+        run: npx tsc --noEmit
+      - name: Lint new portfolio component
+        run: npx eslint app/Components/PortfolioPremium.tsx
+      - name: Report existing repository lint backlog (nonblocking)
+        continue-on-error: true
+        run: npm run lint
+      - name: Production build
+        run: npm run build
+      - name: Validate build output
+        run: test -f out/index.html

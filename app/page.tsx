@@ -6,6 +6,7 @@ import SoftwareResume from "./Components/SoftwareResume";
 import HeroCabinet from "./Components/HeroCabinet";
 import EditBay from "./Components/EditBay";
 import CareerAtlas from "./Components/CareerAtlas";
+import PortfolioPremium from "./Components/PortfolioPremium";
 
 export default function Home() {
   const [terminalLogs, setTerminalLogs] = useState<string[]>([
@@ -99,7 +100,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-[#090d16] text-[#e2e8f0]">
       {/* Sticky navigation header */}
-      <nav className="sticky top-0 z-40 backdrop-blur-md bg-[#050507]/90 border-b border-white/5 select-none">
+      <nav className="hidden sticky top-0 z-40 backdrop-blur-md bg-[#050507]/90 border-b border-white/5 select-none">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
           <div className="brand flex items-center gap-2.5 font-sans font-black text-white text-base sm:text-lg tracking-wide">
             <svg className="h-7 w-7 flex-none" viewBox="0 0 40 40" aria-hidden="true">
@@ -133,8 +134,11 @@ export default function Home() {
 
       <main className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-16">
         
+        <PortfolioPremium />
+
+        {/* Legacy game-focused header retained in code but hidden from the new portfolio experience */}
         {/* Premium Cyber Terminal Header Split */}
-        <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch border-b border-white/5 pb-10">
+        <header className="hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch border-b border-white/5 pb-10">
           
           {/* Left Profile dossier details: 7 Columns */}
           <div className="lg:col-span-7 flex flex-col justify-between gap-8">
@@ -284,7 +288,7 @@ export default function Home() {
 
         </header>
 
-        <CareerAtlas />
+        <div className="hidden"><CareerAtlas /></div>
 
         {/* Playable Star Catcher Arcade Centerpiece */}
         <section className="flex flex-col gap-4">
@@ -303,7 +307,7 @@ export default function Home() {
         </section>
 
         {/* ABOUT / PLAYER CARD SECTION */}
-        <section id="about" className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-t border-white/10 pt-12 items-stretch">
+        <section id="about" className="hidden grid grid-cols-1 lg:grid-cols-12 gap-8 border-t border-white/10 pt-12 items-stretch">
           
           {/* Left: Player Card (7 cols) */}
           <div className="lg:col-span-7 flex flex-col bg-gradient-to-br from-[#241F4B]/60 to-[#1B1838]/60 border border-[#332C5E] rounded-3xl p-6 relative overflow-hidden backdrop-blur-md justify-between shadow-lg pro-card-glow hover:translate-y-0">
@@ -418,7 +422,7 @@ export default function Home() {
         </section>
 
         {/* JOURNEY TIMELINE SECTION */}
-        <section id="journey" className="flex flex-col gap-6 border-t border-white/10 pt-12">
+        <section id="journey" className="hidden flex flex-col gap-6 border-t border-white/10 pt-12">
           <div className="flex flex-col gap-1 border-l-2 border-[#7C6CFF] pl-3">
             <span className="font-mono text-[10px] text-[#7C6CFF] tracking-widest font-black uppercase">
               ◷ 2024 → PRESENT
@@ -475,7 +479,7 @@ export default function Home() {
         </section>
 
         {/* ENGINE / SKILLS LOADOUT SECTION */}
-        <section id="engine" className="flex flex-col gap-6 border-t border-white/10 pt-12">
+        <section id="engine" className="hidden flex flex-col gap-6 border-t border-white/10 pt-12">
           <div className="flex flex-col gap-1 border-l-2 border-[#5BE2A0] pl-3">
             <span className="font-mono text-[10px] text-[#5BE2A0] tracking-widest font-black uppercase">
               ⚙ THE LOADOUT
@@ -520,7 +524,7 @@ export default function Home() {
         </section>
 
         {/* Career Timeline Section */}
-        <section className="mt-6 border-t border-white/10 pt-12">
+        <section id="credentials" className="mt-6 border-t border-white/10 pt-12">
           <SoftwareResume />
         </section>
 
