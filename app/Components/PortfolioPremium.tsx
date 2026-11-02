@@ -69,7 +69,7 @@ export default function PortfolioPremium() {
      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
        <div className="p3-card flex min-h-[150px] items-center justify-between gap-3 p-4 text-white">
          <div><p className="p3-kicker">Professional profile</p><h3 className="mt-2 text-lg font-bold">Software & AI</h3><p className="mt-2 text-xs text-slate-400">Industry · Healthcare · AI Evaluation</p></div>
-         <div className="flex h-24 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#d9ab62]/40 bg-[#1a2231]"><img alt="Professional portrait supplied by Adi" src={portrait===0?"/portfolio-headshot.webp":"/portfolio-formal.webp"} onError={event=>{event.currentTarget.style.display="none"}} className="h-full w-full object-cover"/></div>
+         <div className="flex h-24 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#d9ab62]/40 bg-[#1a2231]"><img alt="Professional portrait supplied by Adi" src={portrait===0?"/portfolio-headshot.svg":"/portfolio-formal.svg"} onError={event=>{event.currentTarget.style.display="none"}} className="h-full w-full object-cover"/></div>
        </div>
        <div className="p3-card flex items-center justify-between p-4 text-white"><p className="text-xs text-slate-400">Portrait view</p><button type="button" className="p3-button text-xs font-semibold text-[#e8bc73]" onClick={()=>setPortrait(v=>1-v)}>Switch photograph ↔</button></div>
      </div>
