@@ -533,7 +533,7 @@ export default function DashboardPortfolio() {
   const [score, setScore] = useState<number>(0);
 
   // PWA Install State
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [deferredPrompt, setDeferredPrompt] = useState<{ prompt: () => void; userChoice: Promise<{ outcome: string }> } | null>(null);
 
   // Level Designer State
   const [modalTab, setModalTab] = useState<"tuning" | "editor">("tuning");
@@ -548,7 +548,7 @@ export default function DashboardPortfolio() {
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
-      setDeferredPrompt(e);
+      setDeferredPrompt(e as unknown as { prompt: () => void; userChoice: Promise<{ outcome: string }> });
     };
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
     return () => {
@@ -567,6 +567,7 @@ export default function DashboardPortfolio() {
   // Initialize/reset customizable grid on game swap
   useEffect(() => {
     if (!activeGame) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional reset when the active game changes
       setUseCustomGrid(false);
       setGridCells([]);
       return;
@@ -651,6 +652,7 @@ export default function DashboardPortfolio() {
     const canvas = modalCanvasRef.current;
     if (!canvas) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional reset when the active game changes
     setScore(0); // Reset score state for new game
 
     const factory = getGameEngine(activeGame.id);

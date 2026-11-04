@@ -80,7 +80,6 @@ const CLIPS: ClipItem[] = [
 ];
 
 // Math helpers for high-fidelity animations
-const TAU = Math.PI * 2;
 const rnd = (a = 1, b?: number) => b === undefined ? Math.random() * a : a + Math.random() * (b - a);
 const clamp = (v: number, a: number, b: number) => v < a ? a : v > b ? b : v;
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
