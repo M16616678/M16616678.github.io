@@ -85,7 +85,7 @@ export function RecruiterPanel() {
                 <li><strong>B.Tech, Electrical & Electronics Engineering</strong>, Vignan University, 2017 to 2020</li>
                 <li><strong>Diploma, Electrical & Electronics Engineering</strong>, 2014 to 2017</li>
               </ul>
-              <div className="mt-5 flex flex-wrap gap-3"><a href="/Adi_Narayana_Manga_Resume.pdf" download="Adi_Narayana_Manga_Resume.pdf" className="v4-btn v4-btn-primary w-full sm:w-auto">Download résumé PDF ↓</a><Link href="/resume/" className="v4-btn v4-btn-ghost w-full sm:w-auto">View live résumé</Link></div>
+              <div className="mt-5 flex flex-wrap gap-3"><Link href="/resume/" className="v4-btn v4-btn-primary w-full sm:w-auto">Preview &amp; download résumé PDF ↗</Link></div>
             </div>
           </div>
         </div>

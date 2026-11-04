@@ -167,11 +167,20 @@ test.describe("other routes", () => {
     expect(errors.filter((e) => !/AudioContext|autoplay/i.test(e))).toEqual([]);
   });
 
-  test("resume page renders from data", async ({ page }) => {
+  test("resume preview and download use one identical PDF", async ({ page, request }) => {
     await page.goto("/resume/");
     await expect(page.getByRole("heading", { level: 1 })).toHaveText("Adi Narayana Manga");
-    await expect(page.getByText("Tata Consultancy Services").first()).toBeVisible();
-    await expect(page.getByText(/GPA 3\.97/)).toBeVisible();
+    const previewSrc = await page.getByTestId("resume-pdf-preview").getAttribute("src");
+    const download = page.getByRole("link", { name: "Download résumé PDF" });
+    await expect(download).toHaveAttribute("download", "Adi_Narayana_Manga_Resume.pdf");
+    const downloadHref = await download.getAttribute("href");
+    expect(previewSrc).toBe("/Adi_Narayana_Manga_Resume.pdf");
+    expect(downloadHref).toBe(previewSrc);
+    await expect(page.getByRole("link", { name: "Open PDF" })).toHaveAttribute("href", previewSrc!);
+    const response = await request.get(downloadHref!);
+    expect(response.status()).toBe(200);
+    const bytes = await response.body();
+    expect(bytes.subarray(0, 5).toString()).toBe("%PDF-");
     await noHorizontalOverflow(page);
   });
 
@@ -227,5 +236,5 @@ test("latest Innovision role, crisp portraits, and public résumé PDF", async (
   expect(bytes.subarray(0, 5).toString()).toBe("%PDF-");
 
   await page.goto("/resume/");
-  await expect(page.getByRole("link", { name: "Download PDF" })).toHaveAttribute("href", "/Adi_Narayana_Manga_Resume.pdf");
+  await expect(page.getByRole("link", { name: "Download résumé PDF" })).toHaveAttribute("href", "/Adi_Narayana_Manga_Resume.pdf");
 });
