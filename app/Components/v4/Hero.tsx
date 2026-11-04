@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#projects" className="v4-btn v4-btn-primary">View projects <span aria-hidden="true">→</span></a>
-            <a href="/Adi_Narayana_Manga_Resume.pdf" download="Adi_Narayana_Manga_Resume.pdf" className="v4-btn v4-btn-ghost">Download résumé PDF ↓</a>
+            <Link href="/resume/" className="v4-btn v4-btn-ghost">Preview résumé &amp; download ↗</Link>
             <a href="#contact" className="v4-btn v4-btn-ghost">Contact</a>
           </div>
           <div className="mt-6 flex items-center gap-5 text-sm text-[var(--muted)]">
