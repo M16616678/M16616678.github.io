@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any -- legacy canvas particle/star records; a typed refactor is listed in the handoff */
 
 import React, { useEffect, useRef, useState } from "react";
 

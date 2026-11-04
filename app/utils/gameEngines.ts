@@ -13,7 +13,7 @@ export interface GameEnv {
   };
   speedSetting?: number;
   gravitySetting?: number;
-  customGrid?: any[];
+  customGrid?: unknown[];
   onScoreChange?: (score: number) => void;
 }
 
@@ -194,7 +194,7 @@ function bg(ctx: CanvasRenderingContext2D, w: number, h: number, c0: string, c1:
 
 // WeakMap Cache for Starfield layers
 const _sfCache = new WeakMap();
-function starfield_cache(key: any, w: number, h: number) {
+function starfield_cache(key: object, w: number, h: number) {
   if (!_sfCache.has(key)) _sfCache.set(key, starfield(40, w, h));
   return _sfCache.get(key);
 }
@@ -207,7 +207,7 @@ export function StarCatcher(opts?: { onScoreChange?: (score: number) => void }):
     let field = starfield(46, w, h);
     const parts = Particles();
     const ship = { x: w / 2, tx: w / 2 };
-    let falls: Array<{ x: number; y: number; v: number; bomb: boolean; r: number; sp: number }> = [];
+    const falls: Array<{ x: number; y: number; v: number; bomb: boolean; r: number; sp: number }> = [];
     let score = 0;
     let spawn = 0;
     let shake = 0;
@@ -367,8 +367,8 @@ export function AstroBlaster(): GameFactory {
     let field = starfield(40, w, h);
     const parts = Particles();
     const ship = { x: w / 2 };
-    let bullets: Array<{ x: number; y: number }> = [];
-    let rocks: Array<{ x: number; y: number; v: number; r: number; rot: number; vr: number }> = [];
+    const bullets: Array<{ x: number; y: number }> = [];
+    const rocks: Array<{ x: number; y: number; v: number; r: number; rot: number; vr: number }> = [];
     let fire = 0;
     let spawn = 0;
     let score = 0;
@@ -1040,7 +1040,7 @@ export function GemMatch(): GameFactory {
     let cw: number;
     let grid: number[][];
     let timer = 0;
-    let popping: Array<{ x: number; y: number; c: string; t: number }> = [];
+    const popping: Array<{ x: number; y: number; c: string; t: number }> = [];
     const cset = [C.coral, C.sun, C.green, C.moon, C.star, C.pink];
     let score = 0;
 
@@ -1911,7 +1911,7 @@ export function CardClash(): GameFactory {
     deal();
 
     function name(v: number) {
-      return v <= 10 ? String(v) : ({ 11: 'J', 12: 'Q', 13: 'K', 14: 'A' } as any)[v];
+      return v <= 10 ? String(v) : ({ 11: 'J', 12: 'Q', 13: 'K', 14: 'A' } as Record<number, string>)[v];
     }
 
     function card(x: number, y: number, cd: typeof left, flip: number, big: boolean) {
@@ -2443,7 +2443,7 @@ export function PhysicsDrop(): GameFactory {
           ctx.beginPath();
           let px = w * 0.16;
           let py = h - 26;
-          let vx = env.pointer.active ? (env.pointer.x - px) * 4 : Math.cos(launchA) * launchP;
+          const vx = env.pointer.active ? (env.pointer.x - px) * 4 : Math.cos(launchA) * launchP;
           let vy = env.pointer.active ? (env.pointer.y - py) * 4 : Math.sin(launchA) * launchP;
           ctx.moveTo(px, py);
           for (let i = 0; i < 18; i++) {
@@ -2604,12 +2604,12 @@ export function mount(
     env.pointer.active = false;
   };
 
-  canvas.addEventListener('mousemove', handlePointerMove as any);
-  canvas.addEventListener('mousedown', handlePointerDown as any);
+  canvas.addEventListener('mousemove', handlePointerMove as EventListener);
+  canvas.addEventListener('mousedown', handlePointerDown as EventListener);
   window.addEventListener('mouseup', handlePointerUp);
   canvas.addEventListener('mouseleave', handlePointerLeave);
-  canvas.addEventListener('touchmove', handlePointerMove as any, { passive: true });
-  canvas.addEventListener('touchstart', handlePointerDown as any, { passive: true });
+  canvas.addEventListener('touchmove', handlePointerMove as EventListener, { passive: true });
+  canvas.addEventListener('touchstart', handlePointerDown as EventListener, { passive: true });
   window.addEventListener('touchend', handlePointerUp);
 
   ensure();
@@ -2634,7 +2634,7 @@ export function mount(
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.drawImage(bufferCanvas, 0, 0);
         }
-      } catch (err) {
+      } catch {
         // Suppress errors
       }
     },
@@ -2642,12 +2642,12 @@ export function mount(
       size();
     },
     destroy() {
-      canvas.removeEventListener('mousemove', handlePointerMove as any);
-      canvas.removeEventListener('mousedown', handlePointerDown as any);
+      canvas.removeEventListener('mousemove', handlePointerMove as EventListener);
+      canvas.removeEventListener('mousedown', handlePointerDown as EventListener);
       window.removeEventListener('mouseup', handlePointerUp);
       canvas.removeEventListener('mouseleave', handlePointerLeave);
-      canvas.removeEventListener('touchmove', handlePointerMove as any);
-      canvas.removeEventListener('touchstart', handlePointerDown as any);
+      canvas.removeEventListener('touchmove', handlePointerMove as EventListener);
+      canvas.removeEventListener('touchstart', handlePointerDown as EventListener);
       window.removeEventListener('touchend', handlePointerUp);
     }
   };
