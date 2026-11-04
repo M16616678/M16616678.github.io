@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { rubric, verdict, weightedScore, codeTask, comparisonTask } from "../app/data/evaluation";
-import { projects, timeline, getProject } from "../app/data/portfolio";
+import { profile, projects, timeline, getProject } from "../app/data/portfolio";
 
 test("rubric weights sum to 100", () => {
   expect(rubric.reduce((s, d) => s + d.weight, 0)).toBe(100);
@@ -42,4 +42,17 @@ test("content guardrails from the handoff", () => {
   expect(all).not.toMatch(/KL University|Electronics & Communication/);
   expect(all).not.toMatch(/hand rehabilitation/i);
   expect(getProject("cfms")!.summary).toMatch(/state-government/);
+});
+
+test("latest professional status and public asset references", () => {
+  const fulltime = timeline.find((t) => t.id === "innovision");
+  const internship = timeline.find((t) => t.id === "innovision-intern");
+  expect(fulltime?.title).toBe("Software Engineer (Full-time)");
+  expect(fulltime?.period).toMatch(/Oct 2026/);
+  expect(internship?.period).toMatch(/Jan 2026 to Sep 2026/);
+  expect(profile.portraits).toHaveLength(2);
+  expect(profile.portraits[0].src).toBe("/portfolio-formal-hq.webp");
+  expect(profile.portraits[1].src).toBe("/portfolio-headshot-hq.webp");
+  expect(profile.summary).toMatch(/full-time Software Engineer at Innovision LLC/);
+  expect(timeline.find((t) => t.id === "tcs")?.place).toBe("Kolkata, India");
 });
