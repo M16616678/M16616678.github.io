@@ -20,7 +20,7 @@ export const profile = {
   shortTitle: "Software Engineer & Technical AI Evaluator",
   location: "Cincinnati, Ohio, USA",
   summary:
-    "Software engineer with close to four years of enterprise Java and Spring work on CFMS 2.0, a state-government financial management system at Tata Consultancy Services, now building scoliosis-care healthcare software at Innovision LLC and evaluating technical AI responses on contract platforms. M.S. in Information Technology from the University of Cincinnati.",
+    "Software engineer with 4+ years of combined experience developing and supporting government financial applications and healthcare software. Currently a full-time Software Engineer at Innovision LLC (since October 2026), following a January–September 2026 internship. Previous work at TCS covered Java/Spring Boot REST APIs, PostgreSQL, financial reporting, testing and CI/CD for CFMS 2.0. M.S. Information Technology, University of Cincinnati (GPA 3.97/4.0). Additional technical AI evaluation experience.",
   email: "mangaaa@mail.uc.edu",
   phone: "+1 (513) 501-1280",
   phoneHref: "tel:+15135011280",
@@ -30,8 +30,8 @@ export const profile = {
     site: "https://m16616678.github.io/",
   },
   portraits: [
-    { src: "/portfolio-formal.svg", alt: "Adi Narayana Manga, formal portrait" },
-    { src: "/portfolio-headshot.svg", alt: "Adi Narayana Manga, headshot" },
+    { src: "/portfolio-formal-hq.webp", alt: "Adi Narayana Manga in a gray suit, standing in an auditorium" },
+    { src: "/portfolio-headshot-hq.webp", alt: "Adi Narayana Manga in a blue collared shirt" },
   ],
 } as const;
 
@@ -84,7 +84,7 @@ export const timeline: TimelineEvent[] = [
     kind: "Employment",
     title: "Software Engineer",
     org: "Tata Consultancy Services",
-    place: "Hyderabad, India",
+    place: "Kolkata, India",
     body: "Active engineering work on CFMS 2.0, the Comprehensive Financial Management System used for state-government financial operations.",
     points: [
       "Payee, Treasury and E-billing modules",
@@ -116,17 +116,33 @@ export const timeline: TimelineEvent[] = [
     projects: ["ai-evaluation"],
   },
   {
-    id: "innovision",
-    period: "Jan 2026 onward",
+    id: "innovision-intern",
+    period: "Jan 2026 to Sep 2026",
     kind: "Employment",
     title: "Software Engineering Intern",
     org: "Innovision LLC",
     place: "Dayton, Ohio",
-    body: "Full-stack work on IBrace, a scoliosis and spinal-orthotic care portal, and ComFit / DCAP, a scoliosis-focused AI assistance effort.",
+    body: "Worked as a software engineering intern on healthcare and AI applications, including the IBrace scoliosis care portal and ComFit / DCAP.",
     points: [
-      "Next.js, React and TypeScript interfaces",
-      "Python FastAPI services with Supabase / PostgreSQL and row-level security",
-      "Multi-role testing across patient, parent, clinician and admin journeys",
+      "React, Next.js and TypeScript interfaces with Python FastAPI services",
+      "Supabase / PostgreSQL, authentication and role-based access controls",
+      "Testing and troubleshooting patient, parent, clinician and administrative workflows",
+    ],
+    projects: ["ibrace", "comfit", "healthcare-testing"],
+  },
+  {
+    id: "innovision",
+    period: "Oct 2026 to present",
+    kind: "Employment",
+    title: "Software Engineer (Full-time)",
+    org: "Innovision LLC",
+    place: "Dayton, Ohio",
+    body: "Full-time software engineering role after the January–September 2026 internship, developing and supporting healthcare and AI application features across frontend, backend, testing and deployment workflows.",
+    points: [
+      "React / Next.js, TypeScript and Python / FastAPI development",
+      "REST APIs, Supabase / PostgreSQL and authentication / role-based access",
+      "Production troubleshooting, log analysis and fix verification",
+      "Windows / Linux deployment support and post-deployment checks",
     ],
     projects: ["ibrace", "comfit", "healthcare-testing"],
   },

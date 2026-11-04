@@ -204,3 +204,28 @@ test.describe("other routes", () => {
     for (const h of hrefs) expect((await request.get(h)).status(), h).toBe(200);
   });
 });
+
+test("latest Innovision role, crisp portraits, and public résumé PDF", async ({ page, request }) => {
+  await page.goto("/");
+  const portrait = page.getByRole("img", { name: /gray suit/i });
+  await expect(portrait).toBeVisible();
+  const photo = await portrait.evaluate((img) => {
+    const image = img as HTMLImageElement;
+    return { src: image.getAttribute("src"), naturalWidth: image.naturalWidth, naturalHeight: image.naturalHeight };
+  });
+  expect(photo.src).toContain("/portfolio-formal-hq.webp");
+  expect(photo.naturalWidth).toBeGreaterThanOrEqual(500);
+  expect(photo.naturalHeight).toBeGreaterThanOrEqual(700);
+  const role = page.locator("#career").getByRole("button", { name: /Software Engineer \(Full-time\)/ });
+  await role.click();
+  await expect(role).toHaveAttribute("aria-expanded", "true");
+  await expect(page.locator("#career")).toContainText("Oct 2026 to present");
+
+  const response = await request.get("/Adi_Narayana_Manga_Resume.pdf");
+  expect(response.ok()).toBeTruthy();
+  const bytes = await response.body();
+  expect(bytes.subarray(0, 5).toString()).toBe("%PDF-");
+
+  await page.goto("/resume/");
+  await expect(page.getByRole("link", { name: "Download PDF" })).toHaveAttribute("href", "/Adi_Narayana_Manga_Resume.pdf");
+});

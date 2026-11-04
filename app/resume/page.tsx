@@ -6,7 +6,7 @@ import { profile, projects, skillGroups, timeline } from "../data/portfolio";
 
 export const metadata: Metadata = {
   title: "Résumé | Adi Narayana Manga",
-  description: "Printable résumé generated from the same verified data as the portfolio.",
+  description: "Download the general-purpose professional résumé or view the live printable résumé.",
 };
 
 export default function ResumePage() {
@@ -24,7 +24,8 @@ export default function ResumePage() {
       <div className="no-print v4-wrap flex flex-wrap items-center justify-between gap-3 py-6">
         <Link href="/" className="v4-btn v4-btn-ghost">← Back to portfolio</Link>
         <div className="flex items-center gap-3">
-          <span className="hidden text-sm text-[var(--dim)] sm:inline">Uses your browser&apos;s Save as PDF</span>
+          <span className="hidden text-sm text-[var(--dim)] sm:inline">Public, general-purpose résumé</span>
+          <a href="/Adi_Narayana_Manga_Resume.pdf" download="Adi_Narayana_Manga_Resume.pdf" className="v4-btn v4-btn-primary">Download PDF ↓</a>
           <PrintButton />
         </div>
       </div>

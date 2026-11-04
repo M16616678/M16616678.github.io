@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#projects" className="v4-btn v4-btn-primary">View projects <span aria-hidden="true">→</span></a>
-            <Link href="/resume/" className="v4-btn v4-btn-ghost">Résumé</Link>
+            <a href="/Adi_Narayana_Manga_Resume.pdf" download="Adi_Narayana_Manga_Resume.pdf" className="v4-btn v4-btn-ghost">Download résumé PDF ↓</a>
             <a href="#contact" className="v4-btn v4-btn-ghost">Contact</a>
           </div>
           <div className="mt-6 flex items-center gap-5 text-sm text-[var(--muted)]">
@@ -89,8 +89,8 @@ export default function Hero() {
 
           <div className="absolute inset-[19%]">
             <div className="v4-portrait h-full w-full">
-              {/* eslint-disable-next-line @next/next/no-img-element -- static export, small inline-WebP SVG */}
-              <img src={portrait.src} alt={portrait.alt} width={180} height={235} />
+              {/* eslint-disable-next-line @next/next/no-img-element -- static export, optimized local WebP portraits */}
+              <img src={portrait.src} alt={portrait.alt} width={550} height={735} fetchPriority="high" decoding="async" />
             </div>
             <button type="button" onClick={() => setP((v) => (v + 1) % profile.portraits.length)}
               className="v4-btn v4-btn-ghost absolute -bottom-5 left-1/2 !min-h-[38px] -translate-x-1/2 !bg-[#0a0f1a] text-xs"
