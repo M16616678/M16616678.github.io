@@ -20,7 +20,7 @@ export const profile = {
   shortTitle: "Software Engineer & Technical AI Evaluator",
   location: "Cincinnati, Ohio, USA",
   summary:
-    "Software engineer with 4+ years of combined experience developing and supporting government financial applications and healthcare software. Currently a full-time Software Engineer at Innovision LLC (since October 2026), following a January–September 2026 internship. Previous work at TCS covered Java/Spring Boot REST APIs, PostgreSQL, financial reporting, testing and CI/CD for CFMS 2.0. M.S. Information Technology, University of Cincinnati (GPA 3.97/4.0). Additional technical AI evaluation experience.",
+    "Software engineer with 4+ years of combined experience developing and supporting government financial applications and healthcare software. Currently a full-time Software Engineer at Innovision LLC (since October 2026), following a January–September 2026 internship. Previous work at TCS covered Java/Spring Boot REST APIs, PostgreSQL, financial reporting, testing and CI/CD for CFMS 2.0. M.S. Information Technology, University of Cincinnati. Additional technical AI evaluation experience.",
   email: "mangaaa@mail.uc.edu",
   phone: "+1 (513) 501-1280",
   phoneHref: "tel:+15135011280",
@@ -30,8 +30,8 @@ export const profile = {
     site: "https://m16616678.github.io/",
   },
   portraits: [
-    { src: "/portfolio-formal-hq.webp", alt: "Adi Narayana Manga in a gray suit, standing in an auditorium" },
-    { src: "/portfolio-headshot-hq.webp", alt: "Adi Narayana Manga in a blue collared shirt" },
+    { src: "/portfolio-formal-hq.webp", alt: "Portrait of Adi Narayana Manga in a gray suit, standing in an auditorium" },
+    { src: "/portfolio-headshot-hq.webp", alt: "Headshot of Adi Narayana Manga in a blue collared shirt" },
   ],
 } as const;
 
