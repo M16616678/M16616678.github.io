@@ -100,7 +100,7 @@ export const timeline: TimelineEvent[] = [
     title: "M.S. Information Technology",
     org: "University of Cincinnati",
     place: "Cincinnati, Ohio",
-    body: "Graduate study across web development, AI, cybersecurity and human-computer interaction. Reported GPA 3.97 / 4.0.",
+    body: "Graduate study across web development, AI, cybersecurity and human-computer interaction. M.S. degree conferred December 13, 2025; cumulative GPA 3.971 / 4.0 (shown as 3.97 / 4.0).",
     points: ["GPA 3.97 / 4.0 (reported)", "HCI project: CareerConnect", "Cloud and data engineering labs"],
     projects: ["careerconnect", "cloud-data-labs"],
   },
