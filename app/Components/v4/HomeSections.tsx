@@ -81,7 +81,7 @@ export function RecruiterPanel() {
             <div className="mt-6 border-t border-[var(--line)] pt-5">
               <p className="text-xs font-semibold uppercase tracking-wider text-[var(--dim)]">Education</p>
               <ul className="mt-2 grid gap-1.5 text-sm">
-                <li><strong>M.S. Information Technology</strong>, University of Cincinnati, 2024 to 2025 · GPA 3.97 / 4.0</li>
+                <li><strong>M.S. Information Technology</strong>, University of Cincinnati, Aug 2024 to Dec 2025 · GPA 3.97 / 4.0</li>
                 <li><strong>B.Tech, Electrical & Electronics Engineering</strong>, Vignan University, 2017 to 2020</li>
                 <li><strong>Diploma, Electrical & Electronics Engineering</strong>, 2014 to 2017</li>
               </ul>

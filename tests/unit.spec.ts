@@ -44,6 +44,14 @@ test("content guardrails from the handoff", () => {
   expect(getProject("cfms")!.summary).toMatch(/state-government/);
 });
 
+test("university degree dates and rounded GPA match the university record", () => {
+  const uc = timeline.find((t) => t.id === "uc");
+  expect(uc?.title).toBe("M.S. Information Technology");
+  expect(uc?.period).toBe("Aug 2024 to Dec 2025");
+  expect(uc?.body).toContain("December 13, 2025");
+  expect(uc?.body).toContain("3.971 / 4.0");
+});
+
 test("latest professional status and public asset references", () => {
   const fulltime = timeline.find((t) => t.id === "innovision");
   const internship = timeline.find((t) => t.id === "innovision-intern");
